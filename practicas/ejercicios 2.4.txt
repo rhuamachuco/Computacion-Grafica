@@ -1,0 +1,79 @@
+
+Ejercicio 2.4.2
+
+    Modifique el programa del ejercicio anterior para solicitar también el radio r del circulo que circunscribe el poligono. 
+    Haga que su programa estime el número n de vértices necesarios para que el polıgono parezca una "buena aproximación" para un circulo. 
+    Utilizando los parámetros ndh, ndv, width, height del dispositivo, obtenga una relación teórica entre n y r para la aproximación de 
+    circulos a través de poligonos.
+
+    SOLUCION:
+
+        ndh - el número de posiciones direccionables horizontalmente.
+        ndv - el número de posiciones direccionables verticalmente.
+        width - el ancho del rectángulo de visualización en mm.
+        height - la altura del rectángulo de visualización en mm.
+
+        La relación teorica para la aproximación de circulos mediante poligonos es:
+
+            angulo = 2*PI / n    donde n es el numero de vertices
+
+        y el radio por el cos y sin del angulo
+
+            radio * cos(angulo)
+            radio * sin(angulo)
+
+
+Ejercicio 2.4.3
+
+    Algunos dispositivos vectoriales ofrecen un conjunto de tres primitivas gráficas:
+
+    • pen: levanta la pluma del papel, o apaga el haz de electrones;
+    • pen down: coloca la pluma sobre el papel, o enciende el haz;
+    • locate (dcx, dcy): coloca la CP en un punto del rectángulo de visualización.
+
+    Escriba rutinas de software que simule estas tres primitivas, usando las primitivas de moveto y drawto.
+
+    SOLUCIÓN:
+
+        pen {
+	        moveto(dcx,dcy)
+	        drawto(dcx,dcy)
+        }
+
+        pen_down {
+	        drawto(dcx,dcy)
+	        drawto(dcx,dcy)
+        }
+
+        locate(dcx, dcy) {
+	        moveto(dcx, dcy);
+        }
+
+
+Ejercicio 2.4.4
+
+    Calcule las razones de aspecto (gráfica y fısica), y las resoluciones de área horizontal y vertical de una pantalla de TV a color estándar, donde:
+
+    • width = 42cm;
+    • height = 31cm;
+    • ndh = 546;
+    • ndv = 434.
+
+    SOLUCION:   
+
+        1. resolución horizontal: horiz_res = ndh/width = 546/420
+        
+        2. tamaño punto horizontal: horiz_dot_size = width/ndh = 420/546
+
+        3. resolución vertical: vert_res = ndv/height = 434/310
+
+        4. tamaño punto vertical: vert_dot_size = height/ndv = 310/434
+
+        5. total puntos direccionables: total_nr_dots = ndh.ndv = 546*434
+
+        6. resolución de área: área res = total_nr_dots/(width.height) = (546*434)/(420*310)
+
+        7. razón de aspecto gráfico: aspect_ratio = vert_dot_size/horiz _dot_tamaño = (310/434)/(420/546)
+
+        8. razón de aspecto fısico: physical_aspect_ratio = height/width = 310/420
+    
