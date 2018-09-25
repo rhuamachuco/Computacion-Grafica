@@ -7,44 +7,36 @@ using namespace std;
 
 void keyboard(unsigned char key, int x, int y) {
     switch (key) {
-    case 119:{ //UP W
+    case 119:{ 
         glTranslatef(0.0, 0.0, -0.5);
         break;
     }
-    case 100:{ //RIGHT D
+    case 100:{
         glTranslatef(0.5, 0.0, 0.0);
         break;
     }
-    case 115:{ //DOWN S
+    case 115:{ 
         glTranslatef(0.0, 0.0, 0.5);
         break;
     }
-    case 97:{ //LEFT A
+    case 97:{ 
         glTranslatef(-0.5, 0.0, 0.0);
         break;
     }
-    case 'q':{ // GIRA IZQ
+    case 'q':{ 
         glRotatef(1.0,0.0,1.0,0.0);
         break;
     }
-    case 'e':{ // GIRA DER
+    case 'e':{ 
         glRotatef(-1.0,0.0,1.0,0.0);
         break;
     }
-    case 'r':{ // GIRA UP
+    case 'r':{ 
         glRotatef(1.0,1.0,0.0,0.0);
         break;
     }
-    case 'f':{ // GIRA DOWN
+    case 'f':{ 
         glRotatef(-1.0,1.0,0.0,0.0);
-        break;
-    }
-    case 'z':{ // ++
-        glScalef(1.2,1.2,1.2);
-        break;
-    }
-    case 'x':{ // --
-        glScalef(0.8,0.8,0.8);
         break;
     }
     case 27:
